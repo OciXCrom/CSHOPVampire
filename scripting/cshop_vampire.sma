@@ -55,7 +55,7 @@ public cshop_item_removed(id, iItem)
 
 public PreTakeDamage(iVictim, iInflictor, iAttacker, Float:fDamage)
 {
-	if(is_user_connected(id) && g_bVampire[iAttacker])
+	if(is_user_connected(iAttacker) && g_bVampire[iAttacker])
 	{
 		new iHealth = get_user_health(iAttacker)
 
