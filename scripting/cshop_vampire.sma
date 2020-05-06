@@ -3,7 +3,7 @@
 #include <hamsandwich>
 #include <fun>
 
-new const PLUGIN_VERSION[] = "1.0"
+new const PLUGIN_VERSION[] = "1.0.1"
 
 #if !defined MAX_PLAYERS
 const MAX_PLAYERS = 32
@@ -55,7 +55,7 @@ public cshop_item_removed(id, iItem)
 
 public PreTakeDamage(iVictim, iInflictor, iAttacker, Float:fDamage)
 {
-	if(g_bVampire[iAttacker])
+	if(is_user_connected(id) && g_bVampire[iAttacker])
 	{
 		new iHealth = get_user_health(iAttacker)
 
